@@ -22,9 +22,35 @@
 		canvas {
 			margin:auto;
 		}
+
+		li {
+			margin:0 0 7px 0;
+		}
 	</style>
 	<preference name="DisallowOverscroll" value="true" />
 </head>
 <body>
+	<div id="sketch-holder" style="display:inline-block;">
+      <!-- Our sketch will go here! -->
+</div>
+	<div style="max-width:812px;">
+	<div style="padding:30px; padding-top:10px;">
+	<h2>Veev Panel Prototype</h2>
+	<ul>
+  <li>Prototype built with <a href="https://p5js.org/">p5.js</a> processing javascript library.</li>
+  <li>Reference for functionality only, not visual design.</li>
+  <li>Toggling developer mode hides overlaid annotations.</li>
+</ul>
+<h2>Functionality Notes</h2>
+<ul>
+<li>Touching and dragging anywhere in the devices column begins adjustment take over. Including the whole column as a potential touch area requires less precision and increases usability.</li>
+<li>We need a good way to differentiate between this touch and drag gesture, on/off taps, and page swipes. </li>
+<li>The first touch establishes the touch-origin and moving away from that point adjusts the setting from its current position. </li>
+<li>Each Column has has a “Decrease Zone” (denoted in yellow in developer mode), which when a drag falls into this zone the adjustment behavior is reversed with the setting decreasing when moving away from the touch-origin and increasing as you move back towards it.</li>
+<li>Also of note, the drag distance needed to reach 100% and fill the circle is smaller than the radius or the circle. The distance you drag and the percentage it increases should not be 1:1 and this ratio will probably be something we would like to tune in final testing.
+</li>
+</ul>
+</div>
+</div>
 </body>
 </html>

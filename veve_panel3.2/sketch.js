@@ -31,7 +31,11 @@ let touchZone = 0;
 bgColor = "#33334A";
 
 function setup() {
-	createCanvas(uiWidth, uiHeight);
+	var canvas = createCanvas(uiWidth, uiHeight);
+
+	// Move the canvas so it’s inside our <div id="sketch-holder">.
+  canvas.parent('sketch-holder');
+
 	midPlane = uiHeight/2;
 	colBound1 = uiWidth*.35;
 	colBound2 = uiWidth*.65;
@@ -41,7 +45,10 @@ function setup() {
 	blob2 = new Blob(2,uiWidth*.5,midPlane,uiWidth*.2);
 	blob3 = new Blob(3,uiWidth*.8,midPlane,uiWidth*.2);
 
-	checkbox = createCheckbox('Turn On Developer Mode', false);
+	checkbox = createCheckbox(' Toggle Developer Mode Annotations', true);
+	checkbox.style('margin-top', '15px');
+	checkbox.style('margin-left', '15px');
+	checkbox.parent('sketch-holder');
   checkbox.changed(myCheckedEvent);
 }
 
